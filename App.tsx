@@ -17,30 +17,15 @@ import {
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  Header
-} from 'react-native/Libraries/NewAppScreen';
-
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  
-}
-
 function App(): JSX.Element {
-  /*const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };*/
-
+  
   return (
     <SafeAreaView style={styles.body}>
-     <Text>asd</Text>
+     <View style={styles.header}>Luonto Tracker</View>
     </SafeAreaView>
   );
 }
@@ -48,8 +33,11 @@ function App(): JSX.Element {
 const styles = StyleSheet.create({
   body: {
     backgroundColor: "#ffffff",
-    height: "100%",
-    width: "100%",
+    //height: "100%",
+    //width: "100%",
+  }
+  header: {
+    backgroundColor: "#ffffff"
   }
 });
 
