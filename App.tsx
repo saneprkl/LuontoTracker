@@ -15,7 +15,10 @@ import {
   Text,
   useColorScheme,
   View,
+  Button,
+  TouchableHighlight 
 } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -25,7 +28,8 @@ function App(): JSX.Element {
   
   return (
     <SafeAreaView style={styles.body}>
-     <View style={styles.header}>Luonto Tracker</View>
+     <View style={styles.header}><Text style={styles.headerTitle}>Luonto Tracker</Text></View>
+     <TouchableHighlight style={styles.retkiBtn}> <Button  title="Aloita uusi retki asdada"/></TouchableHighlight>
     </SafeAreaView>
   );
 }
@@ -33,11 +37,17 @@ function App(): JSX.Element {
 const styles = StyleSheet.create({
   body: {
     backgroundColor: "#ffffff",
-    //height: "100%",
-    //width: "100%",
-  }
+    height: "100%",
+    width: "100%",
+  },
   header: {
-    backgroundColor: "#ffffff"
+    backgroundColor: "green"
+  },
+  headerTitle: {
+    fontSize: 24
+  },
+  retkiBtn: {
+    backgroundColor: "green"
   }
 });
 
