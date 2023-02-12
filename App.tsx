@@ -16,7 +16,8 @@ import {
   useColorScheme,
   View,
   Button,
-  TouchableHighlight 
+  TouchableHighlight,
+  TouchableOpacity 
 } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
@@ -29,7 +30,12 @@ function App(): JSX.Element {
   return (
     <SafeAreaView style={styles.body}>
      <View style={styles.header}><Text style={styles.headerTitle}>Luonto Tracker</Text></View>
-     <TouchableHighlight style={styles.retkiBtn}> <Button  title="Aloita uusi retki asdada"/></TouchableHighlight>
+     <TouchableOpacity  style={styles.retkiBtn}><Text style={styles.retkiTxt}>Aloita uusi retki</Text></TouchableOpacity>
+     <View style={styles.doubleBtns}>
+      <TouchableOpacity  style={styles.jokuBtn}><Text>Aiemmat reitit</Text></TouchableOpacity>
+      <TouchableOpacity  style={styles.karttaanBtn}><Text>Karttaan</Text></TouchableOpacity>
+     </View>
+     <TouchableOpacity  style={styles.retkiBtn}><Text>Ansaitut kreditit</Text></TouchableOpacity>
     </SafeAreaView>
   );
 }
@@ -37,8 +43,10 @@ function App(): JSX.Element {
 const styles = StyleSheet.create({
   body: {
     backgroundColor: "#ffffff",
-    height: "100%",
-    width: "100%",
+    flexDirection: 'column',
+    width: '100%',
+    height: '100%',
+    color:'white'
   },
   header: {
     backgroundColor: "green"
@@ -47,7 +55,26 @@ const styles = StyleSheet.create({
     fontSize: 24
   },
   retkiBtn: {
-    backgroundColor: "green"
+    backgroundColor: "green",
+    marginTop: 150
+  },
+  retkiTxt: {
+    color: 'white'
+  },
+  doubleBtns: {
+    flexDirection: 'row',
+    marginTop: 35,
+    justifyContent: 'center'
+  },
+  jokuBtn: {
+    height: 50,
+    width: 50,
+    backgroundColor: 'green'
+  },
+  karttaanBtn: {
+    height: 50,
+    width: 50,
+    backgroundColor: 'green'
   }
 });
 
